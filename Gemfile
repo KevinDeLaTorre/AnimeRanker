@@ -30,6 +30,11 @@ gem "jbuilder"
 # Authentication
 gem 'devise', '~> 4.2'
 
+gem 'jquery-rails'
+gem 'bootstrap-sass'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

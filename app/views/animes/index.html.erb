@@ -1,0 +1,11 @@
+<h1>Anime Index Page</h1>
+<% if @animes.any? %>
+  <ul class="animes">
+    <% @animes.each do |anime| %>
+      <%= render anime %>
+    <% end %>
+  </ul>
+  <%= will_paginate %>
+<% else %>
+  <p>No anime added yet.</p>
+<% end %>

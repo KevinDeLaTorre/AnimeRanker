@@ -1,0 +1,6 @@
+<p><strong><%= anime.title %></strong></p>
+<p><%= anime.description %></p>
+<p>
+<%= link_to "Edit", edit_anime_path(anime.id) %>
+<%= link_to "Delete", animes_path(anime), method: :delete, data: { confirm: "Are you sure?" } %>
+</p>
