@@ -1,13 +1,17 @@
-<h1 class="text-center">Anime Index Page</h1>
 <div class="container">
-  <% if @animes.any? %>
-    <ul class="animes card-deck">
-      <% @animes.each do |anime| %>
-        <%= render anime %>
-      <% end %>
-    </ul>
-    <%= will_paginate %>
-  <% else %>
-    <p>No anime added yet.</p>
-  <% end %>
+  <div class="container-fluid p-4">
+    <h1 class="text-center">Anime Index Page</h1>
+  </div>
+  <div class="container">
+    <% if @animes.any? %>
+      <ul class="animes card-deck">
+        <% @animes.each do |anime| %>
+          <%= render anime %>
+        <% end %>
+      </ul>
+      <%= will_paginate %>
+    <% else %>
+      <p>No anime added yet.</p>
+    <% end %>
+  </div>
 </div>

@@ -1,8 +1,11 @@
 <% provide(:button_text, "Update") %>
-<h1>Editing <%= @anime.title %></h1>
 
-<%= render 'form' %>
+<div class="container-md">
+  <h1>Editing <%= @anime.title %></h1>
 
-<%= link_to 'All animes', animes_path %> | 
-<%= link_to 'Back', anime_path(@anime) %> | 
-<%= link_to 'Delete', animes_path(@anime), method: :delete, data: { confirm: "Are you sure you want to delete this?" } %>
+  <%= render 'form' %>
+
+  <%= link_to 'All animes', animes_path %> | 
+  <%= link_to 'Back', anime_path(@anime) %> | 
+  <%= link_to 'Delete', animes_path(@anime), method: :delete, data: { confirm: "Are you sure you want to delete this?" } %>
+</div>
