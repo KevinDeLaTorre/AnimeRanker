@@ -1,21 +1,15 @@
-<nav class="navbar navbar-default">
-  <div class="navbar-header">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="navbar-brand">
     <%= link_to "Anime Ranker", root_path, class: "navbar-brand" %>
   </div>
-  <div class="container">
-
-    <ul class="nav navbar-nav">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav ms-auto">
       <% if user_signed_in? %>
-        <li><%= link_to "Add Anime", new_anime_path %></li>
-      <% end %>
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <%= link_to "Add Anime", new_anime_path, class: "nav-link" %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
       <% else %>
-        <li><%= link_to "Sign in", new_user_session_path %></li>
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
       <% end %>
     </ul>
   </div>
