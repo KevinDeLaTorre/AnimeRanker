@@ -1,24 +1,13 @@
-# README
+# Anime Ranker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Allows users to add/rank different anime shows and gives an overall ranking of all animes.
 
-Things you may want to cover:
+## Setup
+Install required gems:\
+``` bundle install ```
 
-* Ruby version
+Initialize database:\
+``` rails db:migrate ```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Start server:\
+``` rails s ```
