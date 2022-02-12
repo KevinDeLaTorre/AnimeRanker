@@ -1,5 +1,6 @@
 class AnimesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_admin!, only: [:destroy]
   before_action :set_anime, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -38,7 +39,7 @@ class AnimesController < ApplicationController
 
   def destroy
     @anime.destroy
-    redirect_to animes_path, notice: "#{anime.title} has been deleted."
+    redirect_to animes_path, notice: "#{@anime.title} has been deleted."
   end
 
   private

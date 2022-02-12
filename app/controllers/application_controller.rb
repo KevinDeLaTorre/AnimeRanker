@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin!
     authenticate_user!
-    render status: 403
+    render root_url, notice: "Access needed to complete action." unless current_user.admin?
   end
 end
