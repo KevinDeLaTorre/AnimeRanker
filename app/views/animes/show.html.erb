@@ -1,13 +1,16 @@
-<h1>Anime Show Page</h1>
-<p>
-<strong>Title: </strong><%= @anime.title %>
-</p>
-<p>
-<strong>Description: </strong><%= @anime.description %>
-</p>
-<p>
-<strong>Average Rating: </strong>WIP
-</p>
+<div class="container-md">
 
-<%= link_to "Edit", edit_anime_path(@anime) %> | 
-<%= link_to "Back", animes_path %>
+  <div class="container-fluid p-4 text-center">
+    <h1><%= @anime.title %></h1>
+  </div>
+  <div class="row">
+    <div class="w-50 mx-auto">
+      <p><strong>Description: </strong><%= @anime.description %></p>
+      <p><strong>Average Rating: </strong>WIP</p>
+      <% if current_user.admin? %>
+        <%= link_to "Edit", edit_anime_path(@anime), class: "btn btn-sm btn-info" %>
+        <%= link_to "Delete", anime_path(@anime), :method => :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+      <% end %>
+    </div>
+  </div> 
+</div>
