@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_191513) do
+ActiveRecord::Schema.define(version: 2022_02_17_213115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_191513) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.float "rating", default: 5.0
     t.index ["title"], name: "index_animes_on_title", unique: true
   end
 
