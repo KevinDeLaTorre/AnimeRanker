@@ -3,8 +3,14 @@ class AnimesController < ApplicationController
   before_action :authenticate_admin!, only: [:destroy]
   before_action :set_anime, only: [:show, :edit, :update, :destroy]
 
+  ITEMSPERPAGE = 5.freeze
+
   def index
-    @animes = Anime.all.paginate(page: params[:page], per_page: 5)
+    if params[:query].present?
+      @animes = Anime.search_title(params[:query]).paginate(page: params[:page], per_page: ITEMSPERPAGE )
+    else
+      @animes = Anime.all.paginate(page: params[:page], per_page: ITEMSPERPAGE)
+    end
   end
 
   def show
