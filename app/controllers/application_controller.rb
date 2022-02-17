@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
 
+  def after_sign_in_path(resource)
+    resource.next_step
+  end
+
   protected
 
   def authenticate_admin!
