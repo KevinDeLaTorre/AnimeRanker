@@ -3,7 +3,7 @@ class AnimesController < ApplicationController
   before_action :authenticate_admin!, only: [:destroy]
   before_action :set_anime, only: [:show, :edit, :update, :destroy]
 
-  ITEMSPERPAGE = 5.freeze
+  ITEMSPERPAGE = 10.freeze
 
   def index
     if params[:query].present?

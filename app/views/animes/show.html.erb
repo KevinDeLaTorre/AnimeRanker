@@ -8,8 +8,8 @@
       <p><strong>Description: </strong><%= @anime.description %></p>
       <p><strong>Average Rating: </strong><%= @anime.rating %></p>
       <% if user_signed_in? %>
-        <% if current_user.admin? %>
           <%= link_to "Edit", edit_anime_path(@anime), class: "btn btn-sm btn-info" %>
+        <% if current_user.admin? %>
           <%= link_to "Delete", anime_path(@anime), :method => :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
         <% end %>
       <% end %>
